@@ -154,7 +154,7 @@ public class Signup extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Fill All the Fields");
             } else {
                 DBConnection connect = new DBConnection();
-                String query = "insert into event values('" + Name + "','" + Email + "','" + regdno + "','" + Password + "','" + Gender + "','" + branch + "','" + contact + "')";
+                String query = "insert into users values('" + Name + "','" + Email + "','" + regdno + "','" + Password + "','" + Gender + "','" + branch + "','" + contact + "')";
                 connect.statement.executeUpdate(query);
                 new AdminPanel();
                 setVisible(false);

@@ -23,7 +23,7 @@ public class AdminLogin extends JFrame implements ActionListener
         label1.setForeground(Color.WHITE);
         add(label1);
 
-        JLabel name = new JLabel("UserPanel ID : ");
+        JLabel name = new JLabel("Admin ID : ");
         name.setBounds(400,260,300,40);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("Algeria",Font.BOLD,38));

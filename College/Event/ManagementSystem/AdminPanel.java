@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AdminPanel extends JFrame implements ActionListener {
-    JButton button1,button2,button3,button4;
+    JButton button1,button2,button3,button4,button5;
     public AdminPanel() {
         super("Admin Panel");
 
@@ -31,6 +31,7 @@ public class AdminPanel extends JFrame implements ActionListener {
         button3.setFont(new Font("Arial",Font.TRUETYPE_FONT,22));
         button3.setContentAreaFilled(false);
         button3.setBorderPainted(false);
+        button3.addActionListener(this);
         add(button3);
 
         button4 = new JButton("View Tickets");
@@ -38,13 +39,28 @@ public class AdminPanel extends JFrame implements ActionListener {
         button4.setFont(new Font("Algeria",Font.TRUETYPE_FONT,22));
         button4.setContentAreaFilled(false);
         button4.setBorderPainted(false);
+        button4.addActionListener(this);
         add(button4);
+
+        button5 = new JButton("Feedbacks");
+        button5.setBounds(820,20,200,40);
+        button5.setFont(new Font("Algeria",Font.TRUETYPE_FONT,22));
+        button5.setContentAreaFilled(false);
+        button5.setBorderPainted(false);
+        button5.addActionListener(this);
+        add(button5);
 
         JPanel top = new JPanel();
         top.setBackground(Color.red);
         top.setBounds(0,0,1540,80);
         add(top);
 
+        ImageIcon image1 = new ImageIcon("Picture5.jpg");
+        Image image2 = image1.getImage().getScaledInstance(1540,830,Image.SCALE_DEFAULT);
+        ImageIcon image3 = new ImageIcon(image2);
+        JLabel image = new JLabel(image3);
+        image.setBounds(0,0,1540,830);
+        add(image);
 
         setLayout(null);
         setSize(1540,830);
@@ -61,6 +77,15 @@ public class AdminPanel extends JFrame implements ActionListener {
             else if(e.getSource() == button1)
             {
                 new Welcome();
+            } else if (e.getSource() == button3) {
+                new AdminUpdateTickets();
+            } else if(e.getSource() == button4)
+            {
+                new AdminViewTickets();
+            }
+            else if(e.getSource() == button5)
+            {
+                new AdminShowFeedback();
             }
         }
         catch(Exception E)

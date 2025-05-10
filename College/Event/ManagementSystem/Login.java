@@ -23,7 +23,7 @@ public class Login extends JFrame implements ActionListener
         label1.setForeground(Color.WHITE);
         add(label1);
 
-        JLabel name = new JLabel("UserPanel ID : ");
+        JLabel name = new JLabel("User ID : ");
         name.setBounds(400,260,300,40);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("Algeria",Font.BOLD,38));
@@ -100,7 +100,7 @@ public class Login extends JFrame implements ActionListener
                     JOptionPane.showMessageDialog(null, "Invalid username or password");
                 }
 
-                new UserPanel();
+                new UserPanel(regd_no);
 
                 rs.close();
                 ps.close();
